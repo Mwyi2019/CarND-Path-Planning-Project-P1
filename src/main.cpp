@@ -19,7 +19,8 @@ constexpr double pi() { return M_PI; }
 double deg2rad(double x) { return x * pi() / 180; }
 double rad2deg(double x) { return x * 180 / pi(); }
 
-// Checks if the SocketIO event has JSON data. If there is data the JSON object in string format will be returned, else the empty string "" will be returned.
+// Checks if the SocketIO event has JSON data. 
+// If there is data the JSON object in string format will be returned, else the empty string "" will be returned.
 string hasData(string s) {
   auto found_null = s.find("null");
   auto b1 = s.find_first_of("[");
@@ -202,8 +203,6 @@ int main() {
 
   h.onMessage([&ref_vel, &lane, &map_waypoints_x,&map_waypoints_y,&map_waypoints_s,&map_waypoints_dx,&map_waypoints_dy]
     (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
-
-
 
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
